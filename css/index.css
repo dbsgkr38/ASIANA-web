@@ -2566,8 +2566,326 @@ footer ul.bottom__footer li:nth-child(5) img{
 
 /* body{background: darkmagenta;} */
 
+#gnb-mo{display: none;}
+#gnb-pc{display: block;}
+
+header{
+  width: 100%;
+  margin: auto;
+}
+.inner{
+  width: 1200px;
+  margin: auto;
+  position: relative;
+  z-index: 100;
+}
+
+/* top menu */
+
+header .top-menu > ul{
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 25px;
+}
+
+header .top-menu > ul > li{
+  width: 100px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+header .top-menu > ul > li ul li a{
+  font-size: 11px;
+}
+
+header .top-menu > ul > li:hover {
+  color: #E30613;
+}
+
+header .top-menu > ul > li.cus-ser > ul{
+  display: none;
+}
+
+header .top-menu > ul > li.cus-ser:hover > ul{
+  display: block;
+  background: rgb(170, 170, 170);
+  padding-bottom: 5px;
+}
+
+header .top-menu > ul > li.cus-ser:hover > ul li{
+  padding-bottom: 5px;
+  padding-left: 4px;
+}
+
+header .top-menu > ul > li.cus-ser:hover > ul li a{
+  color: #fff;
+  text-align: center;
+}
+
+header .top-menu > ul > li.cus-ser:hover > ul li a:hover{
+  color: #E30613;
+}
+
+header .top > ul{
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 500px;
+  top: 20px;
+}
+
+header .top > ul > li{
+  width: 140px;
+  transition: all .2s ease-in-out;
+}
+
+header .top > ul > li:hover a{
+  color: #E30613;
+  text-decoration: underline;
+}
+
+header .top > ul > li a{
+  font-size: 13px;
+  text-align: center;
+}
+
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 2px 1em;
+  color: #fff;
+  background-color: var(--darkgray);
+  background-image: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  position: relative;
+  display: flex;
+  width: 9em;
+  height: 1.5em;
+  border-radius: .25em;
+  overflow: hidden;
+  color: #fff;
+  background: #667eea;
+}
+
+select option{
+  background: #667eea;
+}
+
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: -15px;
+  right: 0;
+  padding: 1em;
+  color: #fff;
+  background-color: #E30613;
+  transition: .25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+
+/* sub-menu */
+.sub-menu{
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+header .sub-menu ul{
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header .sub-menu ul li{
+  position: relative;
+}
+
+header .sub-menu ul li::before{
+  content: '';
+  display: block;
+  width: 1px;
+  height: 12px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+header .sub-menu ul li:first-child::before{
+  content: '';
+  display: none;
+}
+
+header .sub-menu ul li a{
+  padding: 11px 16px;
+  font-size: 12px;
+  color: #656565;
+  display: block;
+}
+
+header .sub-menu ul li a:hover{
+  color: #000;
+}
+
+
+/* 검색창 */
+header .search{
+  height: 34px;
+  position: relative;
+}
+
+header .search input{
+  width: 36px;
+  height: 34px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  transition: width .3s;
+}
+
+header .search input:focus{
+  width: 140px;
+  border-color: #669900;
+}
+
+header .search .material-icons{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  transition: opacity .4s;
+}
+
+header .search.focused .material-icons{
+  opacity: 0;
+}
+
+/* ------------- main-menu ------------- */
+
+
+header nav ul.main-menu{
+  position: absolute;
+  display: flex;
+  right: 450px;
+  top: 87px;
+  bottom: 0;
+}
+
+header nav ul.main-menu .item .item__name{
+  cursor: pointer;
+  padding: 10px 20px 34px 20px;
+  font-size: 20px;
+  margin-left: 50px;
+}
+
+
+header nav ul.main-menu li.item:hover .item__name{
+  background: #fff;
+  color: #E30613;
+  text-decoration: underline;
+  border-radius: 10px 10px 0 0;
+}
+
+/* sub-menu */
+
+header nav ul.main-menu li.item .item__contents{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  display: none;
+}
+
+header nav ul.main-menu li.item:hover .item__contents{
+  display: block;
+  
+}
+
+
+/* 1단 */
+
+header nav ul.main-menu li.item .item__contents .contents__menu{
+  background: #fff;
+  height: 400px;
+  position: relative;
+  z-index: 2000;
+  cursor: pointer;
+}
+
+header nav ul.main-menu li.item .item__contents .contents__menu > ul.inner{
+  display: flex;
+  padding: 20px 0;
+}
+
+header nav ul.main-menu li.item .item__contents .contents__menu > ul.inner > li{
+  width: 520px;
+  padding-left: 100px;
+}
+
+header nav ul.main-menu li.item .item__contents .contents__menu > ul.inner > li:nth-child(6) h4{
+  position: absolute;
+  left: 0;
+  bottom:35px;
+}
+header nav ul.main-menu li.item .item__contents .contents__menu > ul.inner > li:nth-child(6) ul{
+  position: absolute;
+  left: 0;
+  bottom: -100px;
+}
+
+header nav ul.main-menu li.item .item__contents .contents__menu > ul.inner > li h4{
+  padding: 3px 0 12px 0;
+  font-size: 14px;
+  color: #1c1d20;
+  font-weight: 700;
+}
+
+header nav ul.main-menu li.item .item__contents .contents__menu > ul.inner > li ul li{
+  padding: 5px 0;
+  font-size: 12px;
+  color: #1c1d20;
+  cursor: pointer;
+}
+
+header nav ul.main-menu li.item .item__contents .contents__menu > ul.inner:nth-child(6) > li ul li{
+  position: absolute;
+  left: 0;
+  bottom: 100px;
+}
+
+header nav ul.main-menu li.item .item__contents .contents__menu > ul.inner > li ul li:hover{
+  color: #E30613;
+}
+
+header nav ul.main-menu li.item .item__contents .contents__menu > ul.inner > li ul li img{
+  width: 150px;
+  margin-right: 50px;
+}
+
+
+
 .slider{
   margin-bottom: 200px;
+  position: relative;
+  z-index: 1;
 }
 
 #wrapper{
