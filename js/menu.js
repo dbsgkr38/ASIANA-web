@@ -1,3 +1,5 @@
+//  --------------- select menu ---------------
+
 $(document).ready(function() {
     $('#select').css('color','olive');
     $('#select').change(function() {

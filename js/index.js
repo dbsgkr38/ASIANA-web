@@ -58,7 +58,7 @@ for(i = 0; i < toggleSub.length; i++){
 };
 
 
-// tabs
+// ----------- tab menu -------------
 
 var tabLinks = document.querySelectorAll(".tablinks");
 var tabContent = document.querySelectorAll(".tabcontent");
@@ -88,7 +88,7 @@ function openTabs(el) {
 
 
 
-// LOW PRICE
+// ---------------- LOW PRICE ---------------------
 
 new Swiper('.low-price .low-price__inner .swiper', {
     direction: 'horizontal', //방향
@@ -113,7 +113,7 @@ new Swiper('.low-price .low-price__inner .swiper', {
   }
 });
 
-    //   event
+    //  -------------- event --------------
 
     new Swiper('.event-mo .swiper', {
         // Optional parameters
@@ -158,27 +158,6 @@ new Swiper('.low-price .low-price__inner .swiper', {
       });
 
 
-       // 더보기
-
-    
-function showMore(){
-    // 더보기로보여줄 요소 변수에 저장
-    const hide = document.querySelectorAll('.hide');
-    
-    // 배열로 변경하고 4개씩 배열을 쪼개서 보이기
-    // .from => .hide를 배열로 변경
-    //slice(0,4) => 4개씩 배열을 쪼개기
-    const first = Array.from(hide).slice(0, 4);
-    first.forEach(item => {
-        item.classList.remove('hide');
-    });
-    if(hide.length <= 4) {
-        hideMoreBtn();
-    }
-}
-function hideMoreBtn() {
-    document.getElementById('moreBtn').classList.add('hide');
-}
 
 // gsap - scroll 관련 함수
 
