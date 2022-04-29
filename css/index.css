@@ -2599,6 +2599,25 @@ header{
   z-index: 100;
 }
 
+#gnb-pc{
+  width: 100%;
+  margin: auto;
+}
+
+#gnb-pc ul.main-menu{
+  width: 400px;
+}
+
+#gnb-pc .main-menu .item{
+  width: 500px;
+}
+
+#gnb-pc .main-menu .item .item__name{
+  font-size: 17px;
+  text-align: center;
+  width: 150px;
+}
+
 /*------------------ top menu ------------------*/
 
 header .top-menu > ul{
@@ -2668,6 +2687,7 @@ header .top > ul > li a{
   font-size: 13px;
   text-align: center;
 }
+
 
 select {
   /* Reset Select */
