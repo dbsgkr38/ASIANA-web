@@ -48,6 +48,96 @@ GSAP(The GreenSock Animation Platform)은 자바스크립트로 제어하는 타
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js" integrity="sha512-nTHzMQK7lwWt8nL4KF6DhwLHluv6dVq/hNnj2PBN0xMl2KaMm1PM02csx57mmToPAodHmPsipoERRNn4pG7f+Q==" crossorigin="anonymous"></script>
 ```
 
+#Tab-menu
+
+tab 메뉴 틀을 작성하여 애니메이션 처럼 구현되도록 작성하였다
+
+```html
+<section id="wrapper">
+            <div class="content">
+               <!-- Tab links -->
+               <div class="tabs">
+                  <button class="tablinks active" data-country="London"><p data-title="reserve">항공권 예약</p></button>
+                  <button class="tablinks" data-country="Paris"><p data-title="checkin">체크인</p></button>
+                  <button class="tablinks" data-country="Barcelona"><p data-title="search">출도착 조회</p></button>
+                  <button class="tablinks" data-country="Madrid"><p data-title="hotel/rent">호텔/렌터카</p></button>
+               </div>
+         
+               <!-- Tab content -->
+               <div class="wrapper_tabcontent">
+                   <div class="wrapper-inner">
+                       
+                  <div id="London" class="tabcontent active">
+                    <h3>reserve</h3>
+                    <div class="tab_top">
+                        <ul>
+                            <li class="tab1"><a href="#">왕복</a></li>
+                            <li class="tab2"><a href="#">편도</a></li>
+                            <li class="tab3">
+                                <a href="#">다구간 </a>
+                                <span class="material-icons">arrow_drop_down</span>
+                            </li>
+                        </ul>
+                    </div>
+                        <span class="tab4">마일리지사용</span>
+                        <div class="tab__text">
+                            <ul>
+                                <li class="tab5"><a href="javascript:void(0)">
+                                        <label for="number" class="hidden"></label>
+                                        <input type="text" placeholder="출발지" id="start">
+                                        <span class="material-icons">place</span>
+                                    </a>
+                                </li>
+                                <li class="tab6"><a href="javascript:void(0)">
+                                        <label for="number" class="hidden"></label>
+                                        <input type="text" placeholder="도착지" id="end">
+                                        <span class="material-icons">place</span>
+                                    </a>
+                                </li>
+                                <li class="tab7"><a href="javascript:void(0)">
+                                        <input type="date" class="reserve__text-start" 
+                                        name="탑승일" value="탑승일"
+                                            min="2022-03-16" max="2023-12-31">
+                                    </a>
+                                </li>
+                                <li class="tab8"><a href="javascript:void(0)">
+                                        <label for="number" class="hidden"></label>
+                                        <input type="text" placeholder="탑승객" id="person">
+                                        <span class="material-icons">person_add</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+```
+
+```javascript
+var tabLinks = document.querySelectorAll(".tablinks");
+var tabContent = document.querySelectorAll(".tabcontent");
+
+
+tabLinks.forEach(function(el) {
+   el.addEventListener("click", openTabs);
+});
+
+
+function openTabs(el) {
+   var btnTarget = el.currentTarget;
+   var country = btnTarget.dataset.country;
+
+   tabContent.forEach(function(el) {
+      el.classList.remove("active");
+   });
+
+   tabLinks.forEach(function(el) {
+      el.classList.remove("active");
+   });
+
+   document.querySelector("#" + country).classList.add("active");
+   
+   btnTarget.classList.add("active");
+}
+```
+
 # Google Fonts
 페이지에서 사용할 '나눔고딕' 폰트를 지정합니다.
 
